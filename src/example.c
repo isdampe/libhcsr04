@@ -9,7 +9,7 @@ void set_pin(uint8_t status)
 
 uint8_t read_pin()
 {
-	usleep(5090);
+	usleep(500);
 	return 1;
 }
 

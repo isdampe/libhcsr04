@@ -2,6 +2,7 @@
 #define HCSR04_H 1
 #include <stdint.h>
 
+#define HCSR04_ECHO_TIMEOUT_CLOCKS 600
 #define HCSR04_PULSE_TIMER_uS 0xA
 #define HCSR04_DISTANCE_DENOMINATOR_CM 0x3A
 
@@ -29,7 +30,7 @@ void hcsr04_trigger(hcsr04 *instance);
 /**
  * Reads the estimated distance in mm from the hcsr04.
  * @param	hcsr04 *instance	The hcsr04 instance pointer.
- * @return	double				The estimated distance in millimetres.
+ * @return	double				The estimated distance in millimetres, or -1 if a timeout occured.
  */
 double hcsr04_read(hcsr04 *instance);
 
